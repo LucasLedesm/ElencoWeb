@@ -7,11 +7,10 @@ export default function ResultCard({ equipo }) {
   return (
     <div className="w-full bg-white rounded-2xl shadow-lg border-2 border-slate-200 p-6 mt-6">
       <Row icono="⚡" etiqueta="Código" valor={equipo.codigo_equipo} destacado />
+      <Row icono="📄" etiqueta="Hoja de origen" valor={equipo.hoja_origen} />
       <Row icono="🏢" etiqueta="Tipo" valor={equipo.tipo_equipo} />
       <Row icono="📍" etiqueta="Dirección" valor={equipo.direccion} />
-      <Row icono="🏙" etiqueta="Localidad" valor={equipo.localidad} />
-      <Row icono="🔌" etiqueta="Alimentador" valor={equipo.alimentador} />
-      <Row icono="📌" etiqueta="Distrito" valor={equipo.distrito} last />
+      <Row icono="🏙" etiqueta="Localidad" valor={equipo.localidad} last />
     </div>
   );
 }

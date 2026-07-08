@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // better-sqlite3 es un módulo nativo (binario .node). Si Next.js intenta
+  // empaquetarlo con webpack para las funciones serverless, puede fallar
+  // silenciosamente en producción (funciona en local, pero en Vercel las
+  // consultas no devuelven nada o tiran error). Esto le dice a Next que
+  // lo deje como dependencia externa de Node y no lo toque.
+  experimental: {
+    serverComponentsExternalPackages: ['better-sqlite3'],
+  },
+
   // Headers de seguridad recomendados a nivel de aplicación
   async headers() {
     return [
